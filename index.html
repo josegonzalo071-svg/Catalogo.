@@ -160,60 +160,23 @@
       font-size: 1.2rem;
     }
 
-    /* ==================== HERO SECTION ==================== */
-    .hero {
-      min-height: 90vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 4rem 2rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-content {
-      max-width: 1200px;
-      text-align: center;
-      z-index: 1;
-    }
-
-    .hero h1 {
-      font-family: 'Poppins', sans-serif;
-      font-size: clamp(2rem, 4vw, 2.8rem);
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      background: linear-gradient(135deg, var(--white), var(--primary));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      line-height: 1.3;
-    }
-
-    .hero p {
-      font-size: clamp(1rem, 2vw, 1.15rem);
-      color: var(--text-secondary);
-      max-width: 700px;
-      margin: 0 auto 3rem;
-      font-weight: 300;
-    }
-
-    /* ==================== CATALOG BUTTONS SECTION ==================== */
+    /* ==================== CATALOG BUTTONS SECTION - AL INICIO ==================== */
     .catalog-section {
-      padding: 4rem 2rem 6rem;
+      padding: 3rem 2rem 4rem;
       max-width: 1400px;
       margin: 0 auto;
     }
 
     .section-header {
       text-align: center;
-      margin-bottom: 3.5rem;
+      margin-bottom: 2.5rem;
     }
 
     .section-title {
       font-family: 'Poppins', sans-serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
-      margin-bottom: 1rem;
+      margin-bottom: 0.75rem;
       background: linear-gradient(135deg, var(--white), var(--primary));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -221,7 +184,7 @@
     }
 
     .section-subtitle {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--text-secondary);
       max-width: 600px;
       margin: 0 auto;
@@ -281,7 +244,7 @@
       justify-content: center;
       font-size: 2.2rem;
       color: var(--white);
-      box-shadow: 0 8px 25px rgba(9241, 0.4);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
       transition: var(--transition);
     }
 
@@ -326,6 +289,43 @@
       border-color: var(--primary);
       color: var(--primary);
       transform: scale(1.08);
+    }
+
+    /* ==================== HERO SECTION ==================== */
+    .hero {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 3rem 2rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-content {
+      max-width: 1200px;
+      text-align: center;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, var(--white), var(--primary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.3;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.15rem);
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 3rem;
+      font-weight: 300;
     }
 
     /* ==================== COTIZAR BUTTON - ELEGANTE 3D ==================== */
@@ -495,11 +495,6 @@
       animation: float 3.5s ease-in-out infinite;
     }
 
-    .ai-btn {
-      bottom: 16rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-    }
-
     @keyframes float {
       0%, 100% { transform: translateY(0px); }
       50% { transform: translateY(-8px); }
@@ -508,171 +503,6 @@
     .floating-btn:hover {
       transform: scale(1.12) rotate(3deg);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
-    }
-
-    /* ==================== CHAT WIDGET - OCULTO POR DEFECTO ==================== */
-    .chat-widget {
-      position: fixed;
-      top: 120px;
-      right: 2rem;
-      width: 360px;
-      background: rgba(15, 23, 42, 0.98);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg);
-      display: none; /* OCULTO POR DEFECTO */
-      flex-direction: column;
-      overflow: hidden;
-      z-index: 9999;
-      box-shadow: var(--glass-shadow);
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px);
-      animation: slideDown 0.4s ease;
-      max-height: calc(100vh - 160px);
-      border: 2px solid var(--primary);
-    }
-
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .chat-header {
-      padding: 1.25rem 1.5rem;
-      border-bottom: 1px solid var(--glass-border);
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      background: rgba(30, 41, 59, 0.8);
-    }
-
-    .chat-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: var(--radius-full);
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      color: var(--white);
-      flex-shrink: 0;
-    }
-
-    .chat-info h4 {
-      font-family: 'Poppins', sans-serif;
-      font-size: 1.05rem;
-      font-weight: 700;
-      margin-bottom: 0.25rem;
-    }
-
-    .chat-info p {
-      font-size: 0.78rem;
-      color: var(--text-secondary);
-    }
-
-    .chat-body {
-      padding: 1.25rem;
-      max-height: calc(100vh - 280px);
-      overflow-y: auto;
-      flex: 1;
-      scrollbar-width: thin;
-      scrollbar-color: var(--glass-border) transparent;
-    }
-
-    .chat-body::-webkit-scrollbar {
-      width: 5px;
-    }
-
-    .chat-body::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    .chat-body::-webkit-scrollbar-thumb {
-      background: var(--glass-border);
-      border-radius: 10px;
-    }
-
-    .message {
-      margin-bottom: 1.25rem;
-      display: flex;
-      gap: 1rem;
-    }
-
-    .message.bot {
-      justify-content: flex-start;
-    }
-
-    .message.user {
-      justify-content: flex-end;
-      flex-direction: row-reverse;
-    }
-
-    .bubble {
-      max-width: 82%;
-      padding: 0.95rem 1.2rem;
-      border-radius: var(--radius-lg);
-      line-height: 1.6;
-      font-size: 0.9rem;
-    }
-
-    .message.bot .bubble {
-      background: var(--glass-bg);
-      border: 1px solid var(--glass-border);
-      border-radius: var(--radius-lg) var(--radius-lg) var(--radius-lg) var(--radius-md);
-    }
-
-    .message.user .bubble {
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--white);
-      border-radius: var(--radius-lg) var(--radius-lg) var(--radius-md) var(--radius-lg);
-    }
-
-    .chat-input-area {
-      padding: 1rem 1.25rem;
-      border-top: 1px solid var(--glass-border);
-      display: flex;
-      gap: 0.75rem;
-    }
-
-    .chat-input-area input {
-      flex: 1;
-      padding: 0.85rem 1.2rem;
-      border-radius: var(--radius-full);
-      border: 1px solid var(--glass-border);
-      background: var(--glass-bg);
-      color: var(--text-primary);
-      font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      transition: var(--transition);
-    }
-
-    .chat-input-area input:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
-    }
-
-    .chat-input-area button {
-      padding: 0.85rem 1.6rem;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      color: var(--white);
-      border: none;
-      border-radius: var(--radius-full);
-      font-weight: 600;
-      font-size: 0.9rem;
-      cursor: pointer;
-      transition: var(--transition);
-    }
-
-    .chat-input-area button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
     }
 
     /* ==================== FOOTER ==================== */
@@ -756,8 +586,8 @@
       }
 
       .hero {
-        padding: 3rem 1.5rem 2rem;
-        min-height: 70vh;
+        padding: 2rem 1.5rem 2rem;
+        min-height: 60vh;
       }
 
       .hero h1 {
@@ -799,19 +629,6 @@
         grid-template-columns: 1fr;
       }
 
-      .chat-widget {
-        width: 95%;
-        max-width: 380px;
-        right: 1rem;
-        left: 1rem;
-        top: 110px;
-        max-height: calc(100vh - 150px);
-      }
-
-      .chat-body {
-        max-height: calc(100vh - 260px);
-      }
-
       .floating-btn {
         width: 60px;
         height: 60px;
@@ -820,10 +637,6 @@
 
       .instagram-btn {
         bottom: 8.5rem;
-      }
-
-      .ai-btn {
-        bottom: 15rem;
       }
     }
 
@@ -852,7 +665,7 @@
 
       .hero {
         padding: 2rem 1rem 1.5rem;
-        min-height: 60vh;
+        min-height: 50vh;
       }
 
       .hero h1 {
@@ -892,10 +705,6 @@
         bottom: 8rem;
       }
 
-      .ai-btn {
-        bottom: 14rem;
-      }
-
       footer {
         padding: 2.5rem 1rem 1.5rem;
       }
@@ -923,22 +732,14 @@
           <span>Santo Domingo, RD</span>
         </div>
         <div class="contact-item">
-          <i classfab fa-whatsapp"></i>
+          <i class="fab fa-whatsapp"></i>
           <span>+1 (829) 872-5163</span>
         </div>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Tecnología de Calidad para tu Hogar y Empresa</h1>
-      <p>Impresoras, Monitores, UPS y Teléfonos con garantía y soporte técnico especializado en República Dominicana</p>
-    </div>
-  </section>
-
-  <!-- CATALOG SECTION - BOTONES PRINCIPALES -->
+  <!-- CATALOG SECTION - PRIMERO EN LA PÁGINA -->
   <section class="catalog-section" id="catalogo">
     <div class="section-header">
       <h2 class="section-title">Nuestros Productos</h2>
@@ -992,6 +793,14 @@
     </div>
   </section>
 
+  <!-- HERO SECTION - SEGUNDO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Tecnología de Calidad para tu Hogar y Empresa</h1>
+      <p>Impresoras, Monitores, UPS y Teléfonos con garantía y soporte técnico especializado en República Dominicana</p>
+    </div>
+  </section>
+
   <!-- COTIZAR BUTTON - ELEGANTE 3D -->
   <section class="cotizar-section">
     <a href="https://optimoelectronics2-droid.github.io/cotizacion/" class="cotizar-btn" target="_blank">
@@ -1036,7 +845,7 @@
     </div>
   </section>
 
-  <!-- FLOATING BUTTONS -->
+  <!-- FLOATING BUTTONS - SOLO WHATSAPP E INSTAGRAM -->
   <a href="https://wa.me/18298725163" class="floating-btn whatsapp-btn" aria-label="WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
@@ -1044,45 +853,6 @@
   <a href="https://www.instagram.com/trifusiontechnologies?igsh=NWQ3emxydTc2MWo5" class="floating-btn instagram-btn" aria-label="Instagram">
     <i class="fab fa-instagram"></i>
   </a>
-
-  <div class="floating-btn ai-btn" id="aiToggle" aria-label="Asistente IA">
-    <i class="fas fa-robot"></i>
-  </div>
-
-  <!-- CHAT WIDGET - OCULTO POR DEFECTO -->
-  <div class="chat-widget" id="chatWidget">
-    <div class="chat-header">
-      <div class="chat-avatar">
-        <i class="fas fa-robot"></i>
-      </div>
-      <div class="chat-info">
-        <h4>Asistente IA Trifusion</h4>
-        <p>Disponible 24/7 - Responde rápido</p>
-      </div>
-    </div>
-
-    <div class="chat-body" id="chatBody">
-      <div class="message bot">
-        <div class="bubble">
-          <strong>¡Hola! 👋 Soy tu asistente virtual</strong><br><br>
-          <i class="fas fa-info-circle"></i> <strong>Puedo ayudarte con:</strong><br>
-          • Recomendaciones de equipos<br>
-          • Información de garantías<br>
-          • Comparativas de productos<br>
-          • Soporte técnico básico<br>
-          • Cotizaciones<br><br>
-          <i class="fas fa-edit"></i> <strong>Escribe tu consulta abajo 👇</strong>
-        </div>
-      </div>
-    </div>
-
-    <form class="chat-input-area" id="chatForm">
-      <input type="text" id="chatInput" placeholder="Escribe tu mensaje..." required>
-      <button type="submit">
-        <i class="fas fa-paper-plane"></i> Enviar
-      </button>
-    </form>
-  </div>
 
   <!-- FOOTER -->
   <footer>
@@ -1122,117 +892,6 @@
   </footer>
 
   <script>
-    // Toggle Chat IA - OCULTO POR DEFECTO
-    const aiToggle = document.getElementById("aiToggle");
-    const chatWidget = document.getElementById("chatWidget");
-    const chatBody = document.getElementById("chatBody");
-    const chatForm = document.getElementById("chatForm");
-    const chatInput = document.getElementById("chatInput");
-
-    const WORKER_URL = "https://proyecto.josegonzalo071.workers.dev/";
-
-    // Mostrar/ocultar chat
-    aiToggle.addEventListener("click", () => {
-      chatWidget.style.display = chatWidget.style.display === "flex" ? "none" : "flex";
-      
-      // Forzar el chat a estar en primer plano cuando se abre
-      if (chatWidget.style.display === "flex") {
-        setTimeout(() => {
-          chatWidget.style.zIndex = "9999";
-        }, 100);
-      }
-    });
-
-    // ✅ CORRECCIÓN CLAVE: Cerrar chat al hacer clic fuera EN CUALQUIER DISPOSITIVO
-    document.addEventListener("click", (e) => {
-      // Si el chat está abierto
-      if (chatWidget.style.display === "flex") {
-        // Si el clic NO es dentro del chat ni en el botón de IA
-        if (!chatWidget.contains(e.target) && !aiToggle.contains(e.target)) {
-          chatWidget.style.display = "none";
-        }
-      }
-    });
-
-    // Formatear respuesta IA
-    function formatReply(raw) {
-      if (!raw) return "";
-      let text = raw
-        .replace(/&/g, "&amp;")
-        .replace(/</g, "&lt;")
-        .replace(/>/g, "&gt;");
-      
-      text = text.replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
-      text = text.replace(/\*(.+?)\*/g, "<em>$1</em>");
-      text = text.replace(/(?:^|\n)[\-•]\s*(.+)/g, "<br>&nbsp;&nbsp;• $1");
-      text = text.replace(/\n{2,}/g, "<br><br>");
-      text = text.replace(/\n/g, "<br>");
-      
-      return text;
-    }
-
-    function addMessage(from, htmlText) {
-      const msg = document.createElement("div");
-      msg.className = "message " + from;
-      msg.innerHTML = `<div class="bubble">${htmlText}</div>`;
-      chatBody.appendChild(msg);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    function showTyping() {
-      const t = document.createElement("div");
-      t.id = "typing-indicator";
-      t.className = "bubble";
-      t.style.color = "#94a3b8";
-      t.style.fontStyle = "italic";
-      t.textContent = "Trifusion IA está escribiendo...";
-      const msg = document.createElement("div");
-      msg.className = "message bot";
-      msg.appendChild(t);
-      chatBody.appendChild(msg);
-      chatBody.scrollTop = chatBody.scrollHeight;
-    }
-
-    function hideTyping() {
-      const t = document.getElementById("typing-indicator");
-      if (t && t.parentElement) t.parentElement.remove();
-    }
-
-    chatForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const text = chatInput.value.trim();
-      if (!text) return;
-      
-      chatInput.value = "";
-      addMessage("user", formatReply(text));
-      showTyping();
-
-      try {
-        const res = await fetch(WORKER_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ message: text })
-        });
-
-        const data = await res.json();
-        hideTyping();
-
-        let reply = data.reply || "No recibí respuesta del servidor.";
-        let replyHtml = formatReply(reply);
-
-        if (reply.toLowerCase().includes("whatsapp") || reply.toLowerCase().includes("contacto")) {
-          replyHtml += `<br><br><a href="https://wa.me/18298725163" style="display:inline-block;padding:8px 16px;background:linear-gradient(135deg,#25D366,#128C7E);color:white;border-radius:20px;text-decoration:none;font-weight:600;"><i class="fab fa-whatsapp"></i> Contactar por WhatsApp</a>`;
-        }
-
-        addMessage("bot", replyHtml);
-
-      } catch (err) {
-        console.error("Error:", err);
-        hideTyping();
-        addMessage("bot", "⚠️ <strong>Error de conexión</strong><br>No pude conectar con el servicio. Verifica tu conexión.");
-      }
-    });
-
     // Scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
