@@ -490,7 +490,7 @@
     }
 
     .instagram-btn {
-      bottom: 9rem;
+      bottom: 12rem;
       background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
       animation: float 3.5s ease-in-out infinite;
     }
@@ -503,6 +503,377 @@
     .floating-btn:hover {
       transform: scale(1.12) rotate(3deg);
       box-shadow: 0 12px 35px rgba(0, 0, 0, 0.5);
+    }
+
+    /* ==================== LOCATION FLOATING BUTTON ==================== */
+    .location-btn {
+      bottom: 7rem;
+      background: linear-gradient(135deg, #6366f1, #4f46e5, #8b5cf6);
+      background-size: 200% 200%;
+      animation: float 3.25s ease-in-out infinite, gradientMove 4s ease-in-out infinite;
+    }
+
+    @keyframes gradientMove {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .location-btn i {
+      animation: locationPulse 2s ease-in-out infinite;
+    }
+
+    @keyframes locationPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+
+    /* ==================== LOCATION PANEL - BOTTOM SHEET ==================== */
+    .location-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease;
+    }
+
+    .location-overlay.active {
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .location-panel {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-height: 85vh;
+      background: rgba(15, 23, 42, 0.97);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-radius: 28px 28px 0 0;
+      z-index: 1001;
+      transform: translateY(100%);
+      transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+      padding: 1.5rem 1.75rem 2.5rem;
+      border-top: 1px solid rgba(99, 102, 241, 0.2);
+      overflow-y: auto;
+      box-shadow: 0 -20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .location-panel.active {
+      transform: translateY(0);
+    }
+
+    .panel-handle {
+      width: 40px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      border-radius: 4px;
+      margin: 0 auto 1.5rem;
+    }
+
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .panel-header h3 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.4rem;
+      background: linear-gradient(135deg, #fff, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .panel-close {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 1.1rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: var(--transition);
+    }
+
+    .panel-close:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: rotate(90deg);
+    }
+
+    .panel-business {
+      background: rgba(99, 102, 241, 0.08);
+      border: 1px solid rgba(99, 102, 241, 0.15);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .panel-business h4 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      color: #fff;
+      margin-bottom: 0.75rem;
+    }
+
+    .panel-business p {
+      color: rgba(255, 255, 255, 0.7);
+      font-size: 0.9rem;
+      line-height: 1.6;
+      padding-left: 1.25rem;
+      position: relative;
+    }
+
+    .panel-business p::before {
+      content: '📍';
+      position: absolute;
+      left: 0;
+    }
+
+    .panel-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .panel-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      padding: 1rem 0.75rem;
+      border-radius: 14px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.05);
+      color: rgba(255, 255, 255, 0.9);
+      cursor: pointer;
+    }
+
+    .panel-btn i {
+      font-size: 1.1rem;
+    }
+
+    .panel-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+      border-color: rgba(99, 102, 241, 0.4);
+      background: rgba(99, 102, 241, 0.15);
+    }
+
+    .panel-btn:active {
+      transform: translateY(-1px);
+    }
+
+    .panel-btn-full {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+      border-color: rgba(99, 102, 241, 0.3);
+    }
+
+    .panel-btn-full:hover {
+      background: linear-gradient(135deg, rgba(99, 102, 241, 0.35), rgba(139, 92, 246, 0.35));
+    }
+
+    .panel-btn-primary {
+      background: linear-gradient(135deg, #6366f1, #8b5cf6);
+      border-color: transparent;
+      color: #fff;
+    }
+
+    .panel-btn-primary:hover {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      border-color: transparent;
+    }
+
+    .panel-photos {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .panel-photo {
+      position: relative;
+      border-radius: 12px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .panel-photo:hover {
+      transform: scale(1.03);
+      border-color: rgba(99, 102, 241, 0.3);
+      box-shadow: 0 8px 25px rgba(99, 102, 241, 0.2);
+    }
+
+    .panel-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .panel-photo span {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.5rem 0.75rem;
+      background: linear-gradient(0deg, rgba(0,0,0,0.7), transparent);
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* ==================== 3D PRINTER WATERMARK - SUTIL ==================== */
+    .printer-watermark {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: min(60vw, 380px);
+      aspect-ratio: 1;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      pointer-events: none;
+      opacity: 0.04;
+      animation: pwHover 20s ease-in-out infinite;
+    }
+
+    .pw-scene {
+      position: absolute;
+      inset: 10%;
+    }
+
+    .pw-body {
+      position: absolute;
+      inset: 18% 8% 22% 8%;
+      border: 1px solid rgba(99, 102, 241, 0.06);
+      border-radius: 12px 12px 6px 6px;
+      background: linear-gradient(145deg, rgba(99, 102, 241, 0.03), transparent);
+    }
+
+    .pw-column {
+      position: absolute;
+      right: 10%;
+      top: 10%;
+      bottom: 24%;
+      width: 3px;
+      background: rgba(99, 102, 241, 0.08);
+      border-radius: 2px;
+    }
+
+    .pw-arm {
+      position: absolute;
+      right: 8%;
+      left: 18%;
+      height: 3px;
+      background: rgba(139, 92, 246, 0.08);
+      border-radius: 2px;
+      animation: pwArmMove 7s ease-in-out infinite;
+    }
+
+    .pw-head {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: rgba(139, 92, 246, 0.2);
+      border-radius: 50%;
+      top: -2.5px;
+      animation: pwHeadMove 7s ease-in-out infinite;
+    }
+
+    .pw-head::after {
+      content: '';
+      position: absolute;
+      bottom: -16px;
+      left: 50%;
+      width: 1px;
+      height: 16px;
+      background: linear-gradient(180deg, rgba(139, 92, 246, 0.12), transparent);
+    }
+
+    .pw-bed {
+      position: absolute;
+      bottom: 18%;
+      left: 12%;
+      right: 12%;
+      height: 3px;
+      background: rgba(99, 102, 241, 0.06);
+      border-radius: 2px;
+    }
+
+    .pw-print {
+      position: absolute;
+      bottom: 18%;
+      left: 32%;
+      right: 32%;
+      height: 0%;
+      background: linear-gradient(0deg, rgba(99, 102, 241, 0.06), rgba(139, 92, 246, 0.03));
+      border-radius: 1px 1px 0 0;
+      animation: pwPrint 8s ease-in-out infinite;
+    }
+
+    .pw-layer {
+      position: absolute;
+      left: 12%;
+      right: 12%;
+      height: 1px;
+      background: rgba(99, 102, 241, 0.03);
+      opacity: 0;
+      animation: pwLayerAppear 8s ease-in-out infinite;
+    }
+    .pw-layer:nth-child(1) { bottom: 32%; animation-delay: 0.5s; }
+    .pw-layer:nth-child(2) { bottom: 40%; animation-delay: 1.5s; }
+    .pw-layer:nth-child(3) { bottom: 48%; animation-delay: 2.5s; }
+    .pw-layer:nth-child(4) { bottom: 56%; animation-delay: 3.5s; }
+    .pw-layer:nth-child(5) { bottom: 64%; animation-delay: 4.5s; }
+
+    @keyframes pwHover {
+      0%, 100% { transform: translate(-50%, -50%) translateY(0); }
+      50% { transform: translate(-50%, -50%) translateY(-12px); }
+    }
+
+    @keyframes pwArmMove {
+      0%, 100% { top: 30%; }
+      50% { top: 48%; }
+    }
+
+    @keyframes pwHeadMove {
+      0%, 100% { left: 5%; }
+      50% { left: 75%; }
+    }
+
+    @keyframes pwPrint {
+      0%, 10% { height: 0%; }
+      30% { height: 20%; }
+      50% { height: 35%; }
+      70% { height: 50%; }
+      85% { height: 55%; }
+      95%, 100% { height: 0%; }
+    }
+
+    @keyframes pwLayerAppear {
+      0%, 10% { opacity: 0; }
+      30% { opacity: 0.2; }
+      70% { opacity: 0.2; }
+      95%, 100% { opacity: 0; }
     }
 
     /* ==================== FOOTER ==================== */
@@ -635,8 +1006,12 @@
         right: 1.5rem;
       }
 
+      .location-btn {
+        bottom: 6.75rem;
+      }
+
       .instagram-btn {
-        bottom: 8.5rem;
+        bottom: 11.5rem;
       }
     }
 
@@ -701,8 +1076,12 @@
         height: 55px;
       }
 
+      .location-btn {
+        bottom: 6.44rem;
+      }
+
       .instagram-btn {
-        bottom: 8rem;
+        bottom: 10.88rem;
       }
 
       footer {
@@ -713,6 +1092,25 @@
 </head>
 
 <body>
+  <!-- 3D PRINTER WATERMARK -->
+  <div class="printer-watermark" aria-hidden="true">
+    <div class="pw-scene">
+      <div class="pw-body">
+        <div class="pw-layer"></div>
+        <div class="pw-layer"></div>
+        <div class="pw-layer"></div>
+        <div class="pw-layer"></div>
+        <div class="pw-layer"></div>
+      </div>
+      <div class="pw-column"></div>
+      <div class="pw-arm">
+        <div class="pw-head"></div>
+      </div>
+      <div class="pw-bed"></div>
+      <div class="pw-print"></div>
+    </div>
+  </div>
+
   <!-- HEADER -->
   <header>
     <div class="header-container">
@@ -854,6 +1252,66 @@
     <i class="fab fa-instagram"></i>
   </a>
 
+  <!-- LOCATION FLOATING BUTTON -->
+  <button class="floating-btn location-btn" id="locationBtn" aria-label="Ubicación">
+    <i class="fas fa-map-marker-alt"></i>
+  </button>
+
+  <!-- LOCATION PANEL OVERLAY -->
+  <div class="location-overlay" id="locationOverlay"></div>
+
+  <!-- LOCATION PANEL - BOTTOM SHEET -->
+  <div class="location-panel" id="locationPanel">
+    <div class="panel-handle"></div>
+
+    <div class="panel-header">
+      <h3>📍 Ubicación</h3>
+      <button class="panel-close" id="panelClose" aria-label="Cerrar">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+
+    <div class="panel-business">
+      <h4>Trifusion Technologies</h4>
+      <p>Plaza Quiñónez Local</p>
+      <p>C. Club Activo 20-30 3, Alma Rosa II</p>
+      <p>Santo Domingo Este 11506</p>
+      <p>República Dominicana</p>
+    </div>
+
+    <div class="panel-photos">
+      <div class="panel-photo">
+        <img src="exterior.png" alt="Exterior Trifusion Technologies" loading="lazy">
+        <span>Exterior</span>
+      </div>
+      <div class="panel-photo">
+        <img src="interior.jpeg" alt="Interior Trifusion Technologies" loading="lazy">
+        <span>Interior</span>
+      </div>
+    </div>
+
+    <div class="panel-actions">
+      <a href="https://www.google.com/maps/dir//18.4962009,-69.8497819" target="_blank" rel="noopener" class="panel-btn panel-btn-primary panel-btn-full">
+        <i class="fas fa-location-arrow"></i> Cómo llegar
+      </a>
+      <a href="https://www.google.com/maps/place/Trifusion+Technologies/@18.4962009,-69.8497819,915m/data=!4m6!3m5!1s0x8eaf87930b15dbc9:0xbd5f4d6b33cc5f34!8m2!3d18.4962009!4d-69.8497819!16s%2Fg%2F11zcj4kj6m" target="_blank" rel="noopener" class="panel-btn">
+        <i class="fas fa-map"></i> Ver mapa
+      </a>
+      <a href="https://www.google.com/maps/place/Trifusion+Technologies/@18.4963165,-69.8497724,3a,75y,221.36h,50.22t/data=!3m7!1e1!3m5!1sSKLCHfFp2LLkj70XIiSdLw!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D39.7820280206827%26panoid%3DSKLCHfFp2LLkj70XIiSdLw%26yaw%3D221.35554136443278!7i13312!8i6656" target="_blank" rel="noopener" class="panel-btn">
+        <i class="fas fa-street-view"></i> Street View 3D
+      </a>
+      <a href="https://wa.me/18298725163" target="_blank" rel="noopener" class="panel-btn">
+        <i class="fab fa-whatsapp"></i> WhatsApp
+      </a>
+      <a href="tel:+18298725163" class="panel-btn">
+        <i class="fas fa-phone"></i> Llamar
+      </a>
+      <a href="https://www.google.com/maps/place/Trifusion+Technologies/@18.4962009,-69.8497819,915m/data=!3m2!1e3!4b1!4m6!3m5!1s0x8eaf87930b15dbc9:0xbd5f4d6b33cc5f34!8m2!3d18.4962009!4d-69.8497819!16s%2Fg%2F11zcj4kj6m" target="_blank" rel="noopener" class="panel-btn">
+        <i class="fas fa-satellite"></i> Satélite
+      </a>
+    </div>
+  </div>
+
   <!-- FOOTER -->
   <footer>
     <div class="footer-content">
@@ -892,6 +1350,38 @@
   </footer>
 
   <script>
+    // Location Panel Toggle
+    const locationBtn = document.getElementById('locationBtn');
+    const locationOverlay = document.getElementById('locationOverlay');
+    const locationPanel = document.getElementById('locationPanel');
+    const panelClose = document.getElementById('panelClose');
+
+    function openPanel() {
+      locationOverlay.classList.add('active');
+      locationPanel.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePanel() {
+      locationOverlay.classList.remove('active');
+      locationPanel.classList.remove('active');
+      document.body.style.overflow = '';
+    }
+
+    locationBtn.addEventListener('click', openPanel);
+    panelClose.addEventListener('click', closePanel);
+    locationOverlay.addEventListener('click', closePanel);
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closePanel();
+    });
+
+    // Prevent panel close when clicking inside panel
+    locationPanel.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
     // Scroll suave
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
